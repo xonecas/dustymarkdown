@@ -7,9 +7,9 @@
 <head>
    <meta charset="utf-8">
 
-   <title></title>
-   <meta name="description" content="">
-   <meta name="author" content="">
+   <title>Dusty Markdown</title>
+   <meta name="description" content="simple command line content manager">
+   <meta name="author" content="@xonecas">
 
    <!-- Mobile viewport optimized: j.mp/bplateviewport -->
    <meta name="viewport" content="width=device-width, initial-scale=1.0">

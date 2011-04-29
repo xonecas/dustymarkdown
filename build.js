@@ -5,6 +5,9 @@ var fs = require('fs'),
    dust = require('dust'),
    markdown = require("node-markdown").Markdown;
 
+// little tweak to dust
+dust.optimizers.format = function(ctx, node) { return node };
+
 //debug
 var ins = require('util').inspect;
 function log (data) { console.log(ins(data)); };
@@ -52,9 +55,9 @@ function readdir(dir, callback) {
             // sort files by creation date
             if (index === files.length-1) {
                result.sort(function (a, b) {
-                  return a.ctime - b.ctime;
+                  return +new Date(a.ctime) - +new Date(b.ctime);
                });
-               callback(result.reverse());
+               callback(result);
             }
          });
       });

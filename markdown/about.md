@@ -11,5 +11,42 @@ This app is only possible thanks to:
 * Dust.js
 * Markdown
 
+### The gist:
+
+So the build.js file grabs the source files you write and
+compiles them into static assets (@TODO add compression 
+and concatenation). The way it knows what to do with your
+files is because it expects a specific folder/naming 
+convention.
+
+This app is the example of that convention:
+
+
+      root/
+         build.js                   // compiler
+         server.js                  // static asset provider
+
+         templates/                 // home to your pages/views
+            index.dust              // root of the app
+            pagename.dust           // pagename becomes 
+                                    // http://server/pagename
+
+         markdown/                  // where your content goes
+            keyname.md              // you can refer to this in 
+                                    // your template susing {keyname}
+            section_keyname.md      // you can refer to several
+                                    // keynames using {#section}
+         htdocs/                    // your static content
+            ...
+            ...                     // organize it how you want it
+                                    // just remember that the .html
+                                    // files are created by build.js
+                                    // so don't edit them by hand
+
+The default htdocs folder is from HTML5 Boilerplate and so is
+the static file server. One difference is that this app uses
+Ender for the js library, but you're welcome to change it.
+There is also a very simple unique visitors/request counter.
+
 See the example page [here](/about).
 
