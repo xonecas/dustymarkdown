@@ -16,6 +16,7 @@
 
    <!-- CSS: implied media="all" -->
    <link rel="stylesheet" href="css/style.css">
+   <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 
    <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
    <script src="js/libs/modernizr.js"></script>
@@ -23,8 +24,10 @@
 </head>
 
 <body>
-
-{blabla_md|s}
+   <header>{header_md|s}</header>
+   <section id="main">
+      {example_md|s}
+   </section>
 
    <!-- JavaScript at the bottom for fast page loading -->
    <script src="js/libs/ender.js"></script>

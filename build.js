@@ -14,50 +14,67 @@ function readTemplates (callback) {
    fs.readdir('./templates', function (err, templates) {
       if (err) throw err;
 
+      var tmpls = [];
       templates.forEach(function (template, index) {
-         if (template.match(/\.dust$/)) {
+         if (template.match(/\.dust$/) && !template.match(/(^|\/)\./)) {
             fs.readFile('./templates/'+template, 'utf8', function (err2, file) {
                if (err) throw err;
                
                template = template.replace('.dust', '');
                var compiled = dust.compile(file, template);
                dust.loadSource(compiled);
+               tmpls.push(template+'.dust');
 
-               if (index === templates.length-1)
-                  callback(templates);
+               if (index === templates.length-1) {
+                  callback(tmpls);
+               }
             });
          }
       });
    });
 };
 
-/*
-function getStats(dir, files, callback) {
-   var result = [];
-   files.forEach(function (file, index) {
-      fs.stat(dir+file, function (err, stats) {
-         result.push(stats);
-   
-         if (index === files.length-1)
-            callback(result);
+// reads the filenames and stats from a dir
+function readdir(dir, callback) {
+   fs.readdir(dir, function (err, files) {
+      if (err) throw err;
+
+      var result = [];
+      files.forEach(function (file, index) {
+         if (/^\.|\/\./.test(file)) return;
+
+         fs.stat(dir+'/'+file, function (err2, stats) {
+            if (err2) throw err2;
+
+            stats.name = file;
+            result.push(stats);
+      
+            // sort files by creation date
+            if (index === files.length-1) {
+               result.sort(function (a, b) {
+                  return a.ctime - b.ctime;
+               });
+               callback(result.reverse());
+            }
+         });
       });
    });
 }
-*/
 
 // get all markdown files and parse them
 function readMarkdown (callback) {
    var htmlContent = {};
 
-   fs.readdir('./markdown', function (err, files) {
-      if (err) throw err;
-
-      files.forEach(function (filename, index) {
+   readdir('./markdown', function (files) {
+      var counter = files.length;
+      files.forEach(function (fileStats, index) {
+         var filename = fileStats.name;
          if (filename.match(/\.md$/)) {
             fs.readFile('./markdown/'+filename, 'utf8', function (err, file) {
+               if (err) throw err;
+
                // look for section pieces
                if (filename.match(/.+\_.+/)) {
-                  // @TODO need to sort files by create date
                   // its a section piece
                   var split = filename.split('_'), section = split[0];
                   
@@ -69,8 +86,10 @@ function readMarkdown (callback) {
                   htmlContent[filename] = markdown(file);
                }
 
-               if (index === files.length-1)
+               counter--;
+               if (counter === 0) {
                   callback(htmlContent);
+               }
             });
          }
       });
@@ -80,8 +99,12 @@ function readMarkdown (callback) {
 // write the files to static folder.
 function writeFiles (tmpls, html) {
    tmpls.forEach(function (filename, index) {
+      if (filename === undefined) return;
+
       var templateName = filename.replace('.dust', '');
       dust.render(templateName, html, function (err, htmlFile) {
+         if (err) throw err;
+
          filename = './htdocs/'+filename.replace('.dust', '.html');
          fs.writeFile(filename, htmlFile, function (err) {
             if (err) throw err;
