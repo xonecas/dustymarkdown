@@ -50,6 +50,11 @@ There is also a very simple unique visitors/request counter.
 
 See the example page [here](/about).
 
+Dependencies
+------------
+
+* `npm install connect dust node-markdown ender`
+
 More docs:
 ----------
 
