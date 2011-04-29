@@ -50,3 +50,10 @@ There is also a very simple unique visitors/request counter.
 
 See the example page [here](/about).
 
+More docs:
+----------
+
+* [*HTML5 Boilerplate*  →](http://h5bp.com/)
+* [*Ender*  →](http://ender.no.de/)
+* [*Dust*  →](http://akdubya.github.com/dustjs/)
+* [*Markdown*  →](http://daringfireball.net/projects/markdown/basics)

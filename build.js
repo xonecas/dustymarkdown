@@ -54,10 +54,14 @@ function readdir(dir, callback) {
       
             // sort files by creation date
             if (index === files.length-1) {
+/*
                result.sort(function (a, b) {
-                  return +new Date(a.ctime) - +new Date(b.ctime);
+                  var aDate = +new Date(a.ctime),
+                     bDate = +new Date(b.ctime);
+                  return aDate - bDate;
                });
-               callback(result);
+*/
+               callback(result.reverse());
             }
          });
       });
