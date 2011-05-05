@@ -46,9 +46,7 @@ This app is the example of that convention:
                                     // so don't edit them by hand
 
 The default htdocs folder is from HTML5 Boilerplate and so is
-the static file server. One difference is that this app uses
-Ender for the js library, but you're welcome to change it.
-There is also a very simple unique visitors/request counter.
+the static file server. There is also a very simple unique visitors/request counter.
 
 Browse the content of this repo for an example.
 
