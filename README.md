@@ -10,7 +10,6 @@ This app is only possible thanks to:
 ------------------------------------
 
 * HTML5 Boilerplate
-* Ender *no-library*
 * Dust.js
 * Markdown
 
@@ -62,6 +61,5 @@ More docs:
 ----------
 
 * [*HTML5 Boilerplate*  →](http://h5bp.com/)
-* [*Ender*  →](http://ender.no.de/)
 * [*Dust*  →](http://akdubya.github.com/dustjs/)
 * [*Markdown*  →](http://daringfireball.net/projects/markdown/basics)
