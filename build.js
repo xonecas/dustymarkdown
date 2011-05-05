@@ -5,7 +5,32 @@ var fs = require('fs'),
    dust = require('dust'),
    markdown = require("node-markdown").Markdown;
 
+/* this is for last, add production step that compresses
+   everything, minifies js etc...
+
+// check for command line args
+if (process.argv.length >= 3) {
+   var args = process.argv.slice(2);
+
+   if (args[0] === '-u' || '--uglify') {
+      var jsp = require("uglify-js").parser,
+         pro = require("uglify-js").uglify,
+         sqwish = require('sqwish').minify;
+
+      function uglify (orig_code) {
+         var ast = jsp.parse(orig_code); // parse code and get the initial AST
+         ast = pro.ast_mangle(ast); // get a new AST with mangled names
+         ast = pro.ast_squeeze(ast); // get an AST with compression optimizations
+         var final_code = pro.gen_code(ast); // compressed code here
+
+         return final_code;
+      }
+   }
+}
+
 // little tweak to dust
+if (uglify === undefined)
+*/
 dust.optimizers.format = function(ctx, node) { return node };
 
 //debug
@@ -13,6 +38,8 @@ var ins = require('util').inspect;
 function log (data) { console.log(ins(data)); };
 
 // get all my templates and compile them
+//@TODO -- make special templates for header and footer to avoid duplication.
+
 function readTemplates (callback) {
    fs.readdir('./templates', function (err, templates) {
       if (err) throw err;

@@ -109,7 +109,7 @@ var server = connect.createServer(
    // good ol'apache like logging
    // you can customize how the log looks: 
    // http://senchalabs.github.com/connect/middleware-logger.html
-   connect.logger(),
+   connect.logger(":date -!- :remote-addr :method :url :status -!- :user-agent"),
 
    // call to trigger routes
    connect.router(routes),

@@ -181,6 +181,7 @@ h1 {
    border-bottom: 5px solid #444;
    padding:5px 0;
 }
+blockquote {border-left: 10px solid #eee; padding: 5px 5px 5px 10px;}
 ul { margin-bottom: 1em; }
 em { font-weight: bold; }
 footer { font-size: 0.875em; }

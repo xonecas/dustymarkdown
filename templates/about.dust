@@ -1,5 +1,4 @@
 <!doctype html>
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
@@ -8,19 +7,15 @@
    <meta charset="utf-8">
 
    <title>Dusty Markdown</title>
+
    <meta name="description" content="simple command line content manager">
    <meta name="author" content="@xonecas">
-
-   <!-- Mobile viewport optimized: j.mp/bplateviewport -->
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <!-- CSS: implied media="all" -->
    <link rel="stylesheet" href="css/style.css">
    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 
-   <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
    <script src="js/libs/modernizr.js"></script>
-
 </head>
 
 <body>
@@ -29,13 +24,8 @@
       {example_md|s}
    </section>
 
-   <!-- JavaScript at the bottom for fast page loading -->
    <script src="js/libs/ender.js"></script>
-
-   <!-- scripts concatenated and minified via ant build script-->
    <script src="js/script.js"></script>
-   <!-- end scripts-->
-
 
    <!-- simple uniques and page requests tracker, see server.js -->
    <script>Modernizr.localstorage || document.write('<script src="js/libs/storage.js">\x3C/script>')</script>

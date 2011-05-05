@@ -1,44 +1,14 @@
-<!doctype html>
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-   <meta charset="utf-8">
-
-   <title>Dusty Markdown</title>
-   <meta name="description" content="simple command line content manager">
-   <meta name="author" content="@xonecas">
-
-   <!-- Mobile viewport optimized: j.mp/bplateviewport -->
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-   <!-- CSS: implied media="all" -->
-   <link rel="stylesheet" href="css/style.css">
-   <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-
-
-   <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
-   <script src="js/libs/modernizr.js"></script>
-
-</head>
-
-<body>
-   <header>
-      <h1>Dusty Markdown</h1>
-   </header>
-   <section id="main" class="center">
-      <p>This project is the new content manager under xonecas.com.
-It's very minimal and light, developer friendly. The idea 
-is that you can write the dynamic content in markdown and
-use dust to combine static and dynamic.</p>
+<!doctype html><!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]--><!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]--><!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]--><!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]--><head><meta charset="utf-8"><title>Dusty Markdown</title><meta name="description" content="simple command line content manager"><meta name="author" content="@xonecas"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="css/style.css"><link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'><script src="js/libs/modernizr.js"></script></head><body><header><h1>Dusty Markdown</h1></header><section id="main" class="center"><blockquote>
+  <p>This project is the new content manager under <a href="http://xonecas.com">xonecas.com</a>.
+  It's very minimal and light, developer friendly. The idea 
+  is that you can write the dynamic content in markdown and
+  use dust to combine static and dynamic.</p>
+</blockquote>
 
 <h2>This app is only possible thanks to:</h2>
 
 <ul>
 <li>HTML5 Boilerplate</li>
-<li>Ender <em>no-library</em></li>
 <li>Dust.js</li>
 <li>Markdown</li>
 </ul>
@@ -54,25 +24,25 @@ convention.</p>
 <p>This app is the example of that convention:</p>
 
 <pre><code>  root/
-     build.js                   // compiler
-     server.js                  // static asset provider
+     build.js                // compiler
+     server.js               // static asset provider
 
-     templates/                 // home to your pages/views
-        index.dust              // root of the app
-        pagename.dust           // pagename becomes 
-                                // http://server/pagename
+     templates/              // home to your pages/views
+        index.dust           // root of the app
+        pagename.dust        // pagename becomes 
+                             // http://server/pagename
 
-     markdown/                  // where your content goes
-        keyname.md              // you can refer to this in 
-                                // your template susing {keyname}
-        section_keyname.md      // you can refer to several
-                                // keynames using {#section}
-     htdocs/                    // your static content
+     markdown/               // where your content goes
+        keyname.md           // you can refer to this in 
+                             // your template using {keyname}
+        section_keyname.md   // you can refer to several
+                             // keynames using {#section}
+     htdocs/                 // your static content
         ...
-        ...                     // organize it how you want it
-                                // just remember that the .html
-                                // files are created by build.js
-                                // so don't edit them by hand
+        ...                  // organize it how you want it
+                             // just remember that the .html
+                             // files are created by build.js
+                             // so don't edit them by hand
 </code></pre>
 
 <p>The default htdocs folder is from HTML5 Boilerplate and so is
@@ -85,45 +55,19 @@ There is also a very simple unique visitors/request counter.</p>
 <h2>Dependencies</h2>
 
 <ul>
-<li><code>npm install connect dust node-markdown ender</code></li>
+<li><code>npm install connect dust node-markdown</code></li>
 </ul>
 
 <h2>More docs:</h2>
 
 <ul>
 <li><a href="http://h5bp.com/"><em>HTML5 Boilerplate</em>  →</a></li>
-<li><a href="http://ender.no.de/"><em>Ender</em>  →</a></li>
 <li><a href="http://akdubya.github.com/dustjs/"><em>Dust</em>  →</a></li>
 <li><a href="http://daringfireball.net/projects/markdown/basics"><em>Markdown</em>  →</a></li>
-</ul>
-   </section>
-   <footer class="center">
-      <h3>Thu, 29 of April, 2011</h3>
-
-<p>Added more documentation.</p> <h3>Thu, 28 of April, 2011</h3>
+</ul></section><footer class="center"><h3>Thu, 28 of April, 2011</h3>
 
 <p>This is an example entry so that I now it's working.</p> <h3>Thu, 28 of April, 2011</h3>
 
-<p>First cleaned up. Added defult pages. Things look pretty now.</p> 
-   </footer>
+<p>First cleaned up. Added defult pages. Things look pretty now.</p> <h3>Thu, 29 of April, 2011</h3>
 
-
-
-   <!-- JavaScript at the bottom for fast page loading -->
-   <script src="js/libs/ender.js"></script>
-
-   <!-- scripts concatenated and minified via ant build script-->
-   <script src="js/script.js"></script>
-   <!-- end scripts-->
-
-
-   <!-- simple uniques and page requests tracker, see server.js -->
-   <script>Modernizr.localstorage || document.write('<script src="js/libs/storage.js">\x3C/script>')</script>
-   <script>
-      var s = localStorage, key = s.getItem('key');
-      if (key === null) { key = +new Date(); s.setItem('key', key); };
-      $.ajax('/track?key='+key);
-   </script>
-
-</body>
-</html>
+<p>Added more documentation.</p> </footer><script src="js/libs/jquery.js"></script><script src="js/script.js"></script><!-- simple uniques and page requests tracker, see server.js --><script>Modernizr.localstorage || document.write('<script src="js/libs/storage.js">\x3C/script>')</script><script>var s = localStorage, key = s.getItem('key');if (key === null) { key = +new Date(); s.setItem('key', key); };$.get('/track?key='+key);</script></body></html>
