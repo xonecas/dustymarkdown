@@ -55,7 +55,7 @@ Browse the content of this repo for an example.
 Dependencies
 ------------
 
-* `npm install connect dust node-markdown ender`
+* `npm install connect dust node-markdown`
 
 More docs:
 ----------
