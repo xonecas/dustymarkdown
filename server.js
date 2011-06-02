@@ -1,6 +1,6 @@
 // author: Sean Caetano Martin (xonecas)
 var builder = require("./lib/build.js");
-builder(false, false);
+builder(true, true);
 
 var connect = require('connect'),
    url = require('url');
@@ -31,8 +31,8 @@ var routes = function (app) {
 var oneMonth = 1000 * 60 * 60 * 24 * 30;
 // start the server
 var server = connect.createServer(
-   connect.logger("* :date * :remote-addr * :method * :url * \
-:status * :user-agent"),
+   connect.logger("* :date * :remote-addr * :status * :method * :url * \
+:user-agent"),
 
    connect.router(routes),
    connect.static(__dirname+'/static', {maxAge: oneMonth})
