@@ -1,7 +1,7 @@
-> This project is the new content manager under [xonecas.com](http://xonecas.com).
+> This project is the new content manager under [xonecas.com](http://xonecas.com). 
 > It's very minimal and light, developer friendly. The idea 
-> is that you can write the dynamic content in markdown and
-> use dust to combine static and dynamic.
+> is that you can write the dynamic content in markdown and 
+> use dust to combine static and dynamic. 
 
 This app is only possible thanks to:
 ------------------------------------
@@ -12,9 +12,9 @@ This app is only possible thanks to:
 
 ### The gist:
 
-So the build.js file grabs the source files you write and
+So the build.js file grabs the source files you write and 
 compiles them into static assets (@TODO add compression 
-and concatenation). The way it knows what to do with your
+and concatenation). The way it knows what to do with your 
 files is because it expects a specific folder/naming 
 convention.
 
@@ -42,9 +42,9 @@ This app is the example of that convention:
                                  // files are created by build.js
                                  // so don't edit them by hand
 
-The default htdocs folder is from HTML5 Boilerplate and so is
-the static file server. One difference is that this app uses
-Ender for the js library, but you're welcome to change it.
+The default htdocs folder is from HTML5 Boilerplate and so is 
+the static file server. One difference is that this app uses 
+Ender for the js library, but you're welcome to change it. 
 There is also a very simple unique visitors/request counter.
 
 See the example page [here](/about).

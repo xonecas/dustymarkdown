@@ -1,6 +1,7 @@
 // author: Sean Caetano Martin (xonecas)
 var builder = require("./lib/build.js");
-builder(true, true);
+//
+builder(true); // compression: true/false
 
 var connect = require('connect'),
    url = require('url');
